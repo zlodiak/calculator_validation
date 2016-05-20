@@ -43,12 +43,30 @@ APP.CalcView = Backbone.View.extend({
         sizeLengthValid = this.model.isValid('sizeLength'),
         sizeWidthValid = this.model.isValid('sizeWidth'),
         sizeHeightValid = this.model.isValid('sizeHeight'),
-        form = this.model.isValid(true);
+        formValid = this.model.isValid(true);
 
-        console.log(form)
-        console.log(departCityValid, destinCityValid)
-        console.log(shippOptionsWeightValid, shippOptionsVolumeValid)
-        console.log(sizeLengthValid, sizeWidthValid, sizeHeightValid)
+/*    console.log(formValid)
+    console.log(departCityValid, destinCityValid)
+    console.log(shippOptionsWeightValid, shippOptionsVolumeValid)
+    console.log(sizeLengthValid, sizeWidthValid, sizeHeightValid)*/
+
+    var cities = departCityValid && destinCityValid,
+        shippOptions = shippOptionsWeightValid && shippOptionsVolumeValid,
+        sizes = sizeLengthValid && sizeWidthValid && sizeHeightValid;
+
+/*    console.log('cities', cities)
+    console.log('shippOptions', shippOptions)
+    console.log('sizes', sizes)*/
+
+    if(APP.shippOptionsSizesState) {
+      if(cities && shippOptions && sizes) {
+        console.log('modal')
+      };
+    } else {
+      if(cities && shippOptions) {
+        console.log('modal')
+      };
+    };
   },
     
   remove: function() {
