@@ -30,7 +30,7 @@
       </div>
 
       <div class="widget_content form-group col-xs-12">
-        <input type="text" class="form-control" id="departCity" name="departCity">
+        <input type="text" class="form-control" id="fldDepartCity" name="departCity">
         <div id="errMsg_departCity" class="help-block"></div>
       </div>
     </div>
@@ -46,7 +46,7 @@
       </div>
 
       <div class="widget_content form-group col-xs-12">
-        <input type="text" class="form-control" id="departCity" name="destinCity">
+        <input type="text" class="form-control" id="fldDepartCity" name="destinCity">
         <div id="errMsg_destinCity" class="help-block"></div>
       </div>
     </div>
@@ -61,24 +61,24 @@
         <h2>Параметры груза</h2>
       </div>
 
-      <div class="widget_content form-group col-xs-12">
+      <div class="widget_content col-xs-12">
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-6 form-group">
             <label>Вес</label>
 
             <div class="input-group">
-              <input type="text" class="form-control" id="fldShippOptionsWeight">
+              <input type="text" class="form-control" id="fldShippOptionsWeight" name="shippOptionsWeight">
               <span class="input-group-addon">кг</span>
             </div>
 
             <div id="errMsg_shippOptionsWeight" class="help-block"></div>
           </div>
 
-          <div class="col-xs-6">
+          <div class="col-xs-6 form-group">
             <label>Объём</label>
 
             <div class="input-group">
-            <input type="text" class="form-control" id="fldShippOptionsVolume"> 
+            <input type="text" class="form-control" id="fldShippOptionsVolume" name="shippOptionsVolume"> 
               <span class="input-group-addon">м<sup>3</sup></span>
             </div>
 
@@ -99,33 +99,33 @@
   </div>        
 
   <div class="row size_container <%= size_visibility %>">
-    <div class="col-xs-4">
+    <div class="col-xs-4 form-group">
       <label>Длина</label>
 
       <div class="input-group">
-        <input type="text" class="form-control" id="fldSizeLength" value="<%= lengthInitVal %>">
+        <input type="text" class="form-control" id="fldSizeLength" value="<%= lengthInitVal %>" name="sizeLength">
         <span class="input-group-addon">м</span>
       </div>
 
       <div id="errMsg_sizeLength" class="help-block"></div>
     </div>
 
-    <div class="col-xs-4">
+    <div class="col-xs-4 form-group">
       <label>Ширина</label>
 
       <div class="input-group">
-        <input type="text" class="form-control" id="fldSizeWidth" value="<%= widthInitVal %>">
+        <input type="text" class="form-control" id="fldSizeWidth" value="<%= widthInitVal %>" name="sizeWidth">
         <span class="input-group-addon">м</span>
       </div>
 
       <div id="errMsg_sizeWidth" class="help-block"></div>
     </div>
 
-    <div class="col-xs-4">
+    <div class="col-xs-4 form-group">
       <label>Высота</label>
 
       <div class="input-group">
-        <input type="text" class="form-control" id="fldSizeHeight" value="<%= heightInitVal %>">
+        <input type="text" class="form-control" id="fldSizeHeight" value="<%= heightInitVal %>" name="sizeHeight">
         <span class="input-group-addon">м</span>
       </div>
 

@@ -38,9 +38,17 @@ APP.CalcView = Backbone.View.extend({
 
     var departCityValid = this.model.isValid('departCity'), 
         destinCityValid = this.model.isValid('destinCity'),
+        shippOptionsWeightValid = this.model.isValid('shippOptionsWeight'),
+        shippOptionsVolumeValid = this.model.isValid('shippOptionsVolume'),
+        sizeLengthValid = this.model.isValid('sizeLength'),
+        sizeWidthValid = this.model.isValid('sizeWidth'),
+        sizeHeightValid = this.model.isValid('sizeHeight'),
         form = this.model.isValid(true);
 
-        console.log(form, departCityValid, destinCityValid)
+        console.log(form)
+        console.log(departCityValid, destinCityValid)
+        console.log(shippOptionsWeightValid, shippOptionsVolumeValid)
+        console.log(sizeLengthValid, sizeWidthValid, sizeHeightValid)
   },
     
   remove: function() {
