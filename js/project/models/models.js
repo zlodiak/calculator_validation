@@ -33,6 +33,10 @@ APP.CalcModel = Backbone.Model.extend({
     },{
       pattern: 'number',
       msg: 'Введите число'
+    },
+    {
+      pattern: /^[0-9]\d*(\.\d+)?$/,
+      msg: 'Введите положительное число'
     }],     
 
     shippOptionsVolume: [{
@@ -41,6 +45,10 @@ APP.CalcModel = Backbone.Model.extend({
     },{
       pattern: 'number',
       msg: 'Введите число'
+    },
+    {
+      pattern: /^[0-9]\d*(\.\d+)?$/,
+      msg: 'Введите положительное число'
     }],
 
     sizeLength: [{
@@ -49,6 +57,10 @@ APP.CalcModel = Backbone.Model.extend({
     },{
       pattern: 'number',
       msg: 'Введите число'
+    },
+    {
+      pattern: /^[0-9]\d*(\.\d+)?$/,
+      msg: 'Введите положительное число'
     }], 
 
     sizeWidth: [{
@@ -57,6 +69,10 @@ APP.CalcModel = Backbone.Model.extend({
     },{
       pattern: 'number',
       msg: 'Введите число'
+    },
+    {
+      pattern: /^[0-9]\d*(\.\d+)?$/,
+      msg: 'Введите положительное число'
     }], 
 
     sizeHeight: [{
@@ -65,6 +81,10 @@ APP.CalcModel = Backbone.Model.extend({
     },{
       pattern: 'number',
       msg: 'Введите число'
+    },
+    {
+      pattern: /^[0-9]\d*(\.\d+)?$/,
+      msg: 'Введите положительное число'
     }]            
   }       
 
