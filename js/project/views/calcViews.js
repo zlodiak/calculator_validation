@@ -9,7 +9,9 @@ APP.CalcView = Backbone.View.extend({
     
     this.departCityWidget =   new APP.DepartCityView({model: this.model});   
     this.destinCityWidget =   new APP.DestinCityView({model: this.model});
-    this.shippOptionsWidget = new APP.ShippOptionsView({model: this.model});    
+    this.shippOptionsWidget = new APP.ShippOptionsView({model: this.model});   
+    this.paymentModal =       new APP.PaymentModalView({model: this.model});   
+
        
     this.render();
   },    
@@ -61,19 +63,30 @@ APP.CalcView = Backbone.View.extend({
     if(APP.shippOptionsSizesState) {
       if(cities && shippOptions && sizes) {
         console.log('modal')
+        this.$el.append(this.paymentModal.render({price: this._computePrice()}).el);
+        $('#paymentModal').modal('show') 
       };
     } else {
       if(cities && shippOptions) {
         console.log('modal')
+        this.$el.append(this.paymentModal.render({price: this._computePrice()}).el);
+        $('#paymentModal').modal('show') 
       };
     };
   },
     
-  remove: function() {
-      // Remove the validation binding
-      // See: http://thedersen.com/projects/backbone-validation/#using-form-model-validation/unbinding
-      Backbone.Validation.unbind(this);
-      return Backbone.View.prototype.remove.apply(this, arguments);
+  _computePrice: function() { 
+    var weight = this.model.get('shippOptionsWeight'),
+        volume = this.model.get('shippOptionsVolume'),
+        length = this.model.get('sizeLength'),
+        width = this.model.get('sizeWidth'),
+        height = this.model.get('sizeHeight'),
+        sizeVisibility = this.model.get('sizeVisibility'),
+        price = (weight + volume) / 20;
+
+    if(length && width && height && sizeVisibility) { price += (length * width) / height };
+
+    return parseInt(price, 10);
   }
 
 });
@@ -85,7 +98,7 @@ APP.PaymentModalView = Backbone.View.extend({
 
   template: _.template($('#paymentModalTpl').html()),
 
-  render: function (data) {  
+  render: function (data) {  console.log(12)
     this.$el.html(this.template(data));
     return this;
   }
