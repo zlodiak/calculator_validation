@@ -67,6 +67,10 @@ APP.sizeView = Backbone.View.extend({
       widthInitVal: this.model.get('sizeWidth'),
       heightInitVal: this.model.get('sizeHeight')
     }));
+
+
+    APP.shippOptionsSizesState = this.model.get('sizeVisibility') ? true : false;
+
     return this;
   },
 
