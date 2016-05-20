@@ -1,9 +1,11 @@
 APP.CalcView = Backbone.View.extend({  
 
-  initialize: function() {   
+  initialize: function() {       
     APP.shippOptionsSizesState = false;
 
     this.model = new APP.CalcModel();
+
+    Backbone.Validation.bind(this);
     
     this.departCityWidget =   new APP.DepartCityView({model: this.model});   
     this.destinCityWidget =   new APP.DestinCityView({model: this.model});
@@ -28,7 +30,24 @@ APP.CalcView = Backbone.View.extend({
   },
 
   submit: function() { 
+    var data = this.$el.find('#shippForm').serializeObject();
 
+    console.log(data)
+
+    this.model.set(data);
+
+    var departCityValid = this.model.isValid('departCity'), 
+        destinCityValid = this.model.isValid('destinCity'),
+        form = this.model.isValid(true);
+
+        console.log(form, departCityValid, destinCityValid)
+  },
+    
+  remove: function() {
+      // Remove the validation binding
+      // See: http://thedersen.com/projects/backbone-validation/#using-form-model-validation/unbinding
+      Backbone.Validation.unbind(this);
+      return Backbone.View.prototype.remove.apply(this, arguments);
   }
 
 });

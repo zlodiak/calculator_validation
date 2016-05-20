@@ -1,5 +1,5 @@
 <script type="text/template" id="calcTpl">
-  <div class="container">
+  <form class="container" id="shippForm">
     <div class="row">
       <div class="col-xs-12"><h1>Калькулятор доставки</h1></div>
     </div>
@@ -18,7 +18,7 @@
         <div class="btn btn-default pull-right" id="calcSubmitBtn">Рассчитать</div>
       </div>
     </div>        
-  </div>
+  </form>
 </script>
 
 
@@ -30,7 +30,7 @@
       </div>
 
       <div class="widget_content form-group col-xs-12">
-        <input type="text" class="form-control" id="fldDepartCity">
+        <input type="text" class="form-control" id="departCity" name="departCity">
         <div id="errMsg_departCity" class="help-block"></div>
       </div>
     </div>
@@ -46,7 +46,7 @@
       </div>
 
       <div class="widget_content form-group col-xs-12">
-        <input type="text" class="form-control" id="fldDestinCity">
+        <input type="text" class="form-control" id="departCity" name="destinCity">
         <div id="errMsg_destinCity" class="help-block"></div>
       </div>
     </div>
