@@ -34,8 +34,6 @@ APP.CalcView = Backbone.View.extend({
   submit: function() { 
     var data = this.$el.find('#shippForm').serializeObject();
 
-    console.log(data)
-
     this.model.set(data);
 
     var departCityValid = this.model.isValid('departCity'), 
@@ -62,13 +60,11 @@ APP.CalcView = Backbone.View.extend({
 
     if(APP.shippOptionsSizesState) {
       if(cities && shippOptions && sizes) {
-        console.log('modal')
         this.$el.append(this.paymentModal.render({price: this._computePrice()}).el);
         $('#paymentModal').modal('show') 
       };
     } else {
       if(cities && shippOptions) {
-        console.log('modal')
         this.$el.append(this.paymentModal.render({price: this._computePrice()}).el);
         $('#paymentModal').modal('show') 
       };
@@ -81,10 +77,9 @@ APP.CalcView = Backbone.View.extend({
         length = this.model.get('sizeLength'),
         width = this.model.get('sizeWidth'),
         height = this.model.get('sizeHeight'),
-        sizeVisibility = this.model.get('sizeVisibility'),
         price = (weight + volume) / 20;
 
-    if(length && width && height && sizeVisibility) { price += (length * width) / height };
+    if(length && width && height && APP.shippOptionsSizesState) { price += (length * width) / height };
 
     return parseInt(price, 10);
   }
@@ -98,7 +93,7 @@ APP.PaymentModalView = Backbone.View.extend({
 
   template: _.template($('#paymentModalTpl').html()),
 
-  render: function (data) {  console.log(12)
+  render: function (data) { 
     this.$el.html(this.template(data));
     return this;
   }
