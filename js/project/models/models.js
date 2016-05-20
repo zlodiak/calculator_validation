@@ -11,14 +11,20 @@ APP.CalcModel = Backbone.Model.extend({
   }, 
 
   validation: {
-    departCity: {
+    departCity: [{
       required: true,
-      minLength: 3
-    },
-    destinCity: {
+      msg: 'Поле не может быть пустым'
+    },{
+      minLength: 3,
+      msg: 'Введите не менее 3 сииволов'
+    }], 
+    destinCity: [{
       required: true,
-      minLength: 3
-    }
+      msg: 'Поле не может быть пустым'
+    },{
+      minLength: 3,
+      msg: 'Введите не менее 3 сииволов'
+    }]
 
   }       
 
