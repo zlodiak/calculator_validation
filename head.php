@@ -6,7 +6,7 @@
     <title>backbone valiadtion form 2</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="js/bootstrap-3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/libs/bootstrap-3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles -->
     <link href="css/styles.css" rel="stylesheet">

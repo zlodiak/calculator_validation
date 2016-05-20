@@ -1,7 +1,7 @@
-﻿<script src="js/jquery/jquery.2.min.js"></script>    
-<script src="js/bootstrap-3/js/bootstrap.min.js"></script> 
-<script src="js/underscore-min.js"></script>
-<script src="js/backbone-min.js"></script>
+﻿<script src="js/libs/jquery/jquery.2.min.js"></script>    
+<script src="js/libs/bootstrap-3/js/bootstrap.min.js"></script> 
+<script src="js/libs/underscore-min.js"></script>
+<script src="js/libs/backbone-min.js"></script>
 
 <script>
   window.APP = window.APP || {};
