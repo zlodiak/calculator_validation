@@ -1,4 +1,5 @@
-live page: http://prozaik.16mb.com/works/weekend_projects/shipping_Calculator_4/
+live page: http://fh79272k.bget.ru/files/works/calcuator_validation/2/
 
-in this version calculator made it following: 
-  1. add new fields with variable visibility
+form is simply. use backbone and backbone validation plugin.
+
+in result after click on submit-button user see modal window with calculated price
